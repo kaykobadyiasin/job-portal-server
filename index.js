@@ -49,7 +49,6 @@ async function run() {
         })
         
 
-
         // experiencedJobs related apis 
         app.get('/experiencedJobs', async (req, res) => {
             const result = await experiencedJobsCollection.find().toArray();
