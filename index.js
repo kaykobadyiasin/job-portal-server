@@ -41,10 +41,25 @@ async function run() {
             res.send(result);
         })
 
+        app.post('/fresherJobs', async (req, res) => {
+            const freshJob = req.body;
+            console.log(freshJob);
+            const result = await fresherJobsCollection.insertOne(freshJob);
+            res.send(result);
+        })
+        
+
 
         // experiencedJobs related apis 
         app.get('/experiencedJobs', async (req, res) => {
             const result = await experiencedJobsCollection.find().toArray();
+            res.send(result);
+        })
+
+        app.post('/experiencedJobs', async (req, res) => {
+            const expertJob = req.body;
+            console.log(expertJob);
+            const result = await experiencedJobsCollection.insertOne(expertJob);
             res.send(result);
         })
 
